@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XPc-da-XKs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--List All View Controller-->
+        <scene sceneID="28D-EM-Dk8">
+            <objects>
+                <viewController id="XPc-da-XKs" customClass="ListAllViewController" customModule="词" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9If-MK-3sw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mFR-DV-RHt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PTu-ak-wNf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-CE-CdE" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <animations/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TJK-XM-hG8">
+                                <rect key="frame" x="81" y="101" width="159" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="默认排序"/>
+                                    <segment title="按字数排序"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="change:" destination="XPc-da-XKs" eventType="valueChanged" id="UAE-YD-Wl1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TJK-XM-hG8" firstAttribute="top" secondItem="9If-MK-3sw" secondAttribute="bottom" constant="81" id="DvV-Vn-Shg"/>
+                            <constraint firstItem="mFR-DV-RHt" firstAttribute="top" secondItem="lKD-CE-CdE" secondAttribute="bottom" id="ObT-eX-E9H"/>
+                            <constraint firstItem="TJK-XM-hG8" firstAttribute="centerX" secondItem="PTu-ak-wNf" secondAttribute="centerX" id="j9R-wI-wdF"/>
+                            <constraint firstItem="lKD-CE-CdE" firstAttribute="top" secondItem="PTu-ak-wNf" secondAttribute="top" id="oTs-Dq-VMo"/>
+                            <constraint firstItem="lKD-CE-CdE" firstAttribute="leading" secondItem="PTu-ak-wNf" secondAttribute="leading" id="vBQ-ND-BMr"/>
+                            <constraint firstAttribute="trailing" secondItem="lKD-CE-CdE" secondAttribute="trailing" id="xQU-7t-9Hq"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="segment" destination="TJK-XM-hG8" id="H0C-Xy-jvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mP3-TE-9LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165" y="310"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchImage" width="320" height="480"/>
+    </resources>
+</document>

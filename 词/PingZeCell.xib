@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="fzqkyuesong.TTF">
+            <string>FZQKBYSJW--GB1-0</string>
+            <string>FZQKBYSJW--GB1-0</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="88" id="4DY-DN-ozc" customClass="PingZeCell" customModule="词" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="342" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4DY-DN-ozc" id="1T1-pd-g91">
+                <rect key="frame" x="0.0" y="0.0" width="342" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tj4-Ii-tET">
+                        <rect key="frame" x="5" y="53" width="337" height="30"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="FZQKBYSJW--GB1-0" family="FZQingKeBenYueSongS-R-GB" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="change:" destination="4DY-DN-ozc" eventType="editingDidEnd" id="hKe-9h-iM5"/>
+                            <action selector="click:" destination="4DY-DN-ozc" eventType="editingDidBegin" id="bp6-Nv-H9h"/>
+                            <action selector="outputText:" destination="4DY-DN-ozc" eventType="editingChanged" id="V0u-Vo-k2t"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●○○、⌾○○●，●⌾○、⌾●●○○。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnO-LL-7JC">
+                        <rect key="frame" x="5" y="10" width="337" height="43"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="z9I-AB-YD2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="FZQKBYSJW--GB1-0" family="FZQingKeBenYueSongS-R-GB" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="tj4-Ii-tET" firstAttribute="top" secondItem="UnO-LL-7JC" secondAttribute="bottom" id="ADY-0d-8Ev"/>
+                    <constraint firstAttribute="trailing" secondItem="UnO-LL-7JC" secondAttribute="trailing" id="C5b-90-ymc"/>
+                    <constraint firstItem="tj4-Ii-tET" firstAttribute="leading" secondItem="UnO-LL-7JC" secondAttribute="leading" id="E7u-II-lEI"/>
+                    <constraint firstItem="UnO-LL-7JC" firstAttribute="leading" secondItem="1T1-pd-g91" secondAttribute="leading" constant="5" id="eWf-hZ-6fU"/>
+                    <constraint firstItem="UnO-LL-7JC" firstAttribute="top" secondItem="1T1-pd-g91" secondAttribute="top" constant="10" id="hCl-65-wZ1"/>
+                    <constraint firstItem="tj4-Ii-tET" firstAttribute="trailing" secondItem="UnO-LL-7JC" secondAttribute="trailing" id="hRa-au-tFr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="contentLabel" destination="UnO-LL-7JC" id="W6z-70-yQ3"/>
+                <outlet property="input" destination="tj4-Ii-tET" id="13a-Nb-BZ0"/>
+            </connections>
+            <point key="canvasLocation" x="276" y="40"/>
+        </tableViewCell>
+    </objects>
+</document>

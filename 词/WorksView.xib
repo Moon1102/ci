@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="fzqkyuesong.TTF">
+            <string>FZQKBYSJW--GB1-0</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WorksView" customModule="词" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="301" height="286"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001" translatesAutoresizingMaskIntoConstraints="NO" id="IcE-QC-hYl">
+                    <rect key="frame" x="0.0" y="20" width="301" height="266"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ae-PH-Egg">
+                    <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpE-Fy-1Bb">
+                    <rect key="frame" x="0.0" y="20" width="301" height="266"/>
+                    <animations/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" name="FZQKBYSJW--GB1-0" family="FZQingKeBenYueSongS-R-GB" pointSize="17"/>
+                    <color key="textColor" red="0.2967271775118332" green="0.88808390876045895" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-gC-qf3">
+                    <rect key="frame" x="0.0" y="20" width="301" height="266"/>
+                    <animations/>
+                    <connections>
+                        <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="7bn-pa-iAY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9ae-PH-Egg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="05z-QC-WMD"/>
+                <constraint firstItem="vAb-gC-qf3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7ZY-a9-2lf"/>
+                <constraint firstAttribute="bottom" secondItem="IcE-QC-hYl" secondAttribute="bottom" id="Axp-ld-bxT"/>
+                <constraint firstAttribute="trailing" secondItem="9ae-PH-Egg" secondAttribute="trailing" id="C5F-Up-2kM"/>
+                <constraint firstItem="vAb-gC-qf3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="KNG-ra-kpi"/>
+                <constraint firstItem="JpE-Fy-1Bb" firstAttribute="width" secondItem="IcE-QC-hYl" secondAttribute="width" id="OEW-5X-qZZ"/>
+                <constraint firstAttribute="trailing" secondItem="vAb-gC-qf3" secondAttribute="trailing" id="SCM-Sf-Uy6"/>
+                <constraint firstAttribute="trailing" secondItem="IcE-QC-hYl" secondAttribute="trailing" id="UxD-Ti-MAR"/>
+                <constraint firstItem="IcE-QC-hYl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a8B-Bm-zzT"/>
+                <constraint firstItem="JpE-Fy-1Bb" firstAttribute="centerX" secondItem="IcE-QC-hYl" secondAttribute="centerX" id="dbt-w2-05V"/>
+                <constraint firstAttribute="bottom" secondItem="vAb-gC-qf3" secondAttribute="bottom" id="fkK-mp-dxX"/>
+                <constraint firstItem="9ae-PH-Egg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nkT-k3-lQA"/>
+                <constraint firstItem="IcE-QC-hYl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="ttP-Lu-mNe"/>
+                <constraint firstItem="JpE-Fy-1Bb" firstAttribute="height" secondItem="IcE-QC-hYl" secondAttribute="height" id="uom-Eq-DXM"/>
+                <constraint firstItem="JpE-Fy-1Bb" firstAttribute="centerY" secondItem="IcE-QC-hYl" secondAttribute="centerY" id="vVe-C0-uKC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="JpE-Fy-1Bb" id="e4J-Zt-1Xo"/>
+                <outlet property="timeLabel" destination="9ae-PH-Egg" id="Y0B-my-FRs"/>
+            </connections>
+            <point key="canvasLocation" x="412.5" y="-19"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="001" width="320" height="568"/>
+    </resources>
+</document>
