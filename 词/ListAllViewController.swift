@@ -26,6 +26,8 @@ class ListAllViewController:UIViewController
 
         initData()
     }
+    
+    //初始化数据
     func initData()
     {
         let data = db.query("SELECT * FROM cipai")
@@ -44,6 +46,8 @@ class ListAllViewController:UIViewController
         scroll.contentSize = CGSizeMake(CGFloat(data.count) * 90, 0)
         view.addSubview(scroll)
     }
+    
+    //切换排列方式
     @IBAction func change(sender: UISegmentedControl)
     {
         switch sender.selectedSegmentIndex

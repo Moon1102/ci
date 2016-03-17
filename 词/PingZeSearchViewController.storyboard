@@ -23,18 +23,6 @@
                                 <outlet property="delegate" destination="qRK-VO-ZVd" id="KsT-t3-0Bq"/>
                             </connections>
                         </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lxB-en-7Dx">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lxB-en-7Dx" id="TOh-ug-kKd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="qRK-VO-ZVd" id="znp-XT-CRD"/>
                             <outlet property="delegate" destination="qRK-VO-ZVd" id="nWe-9L-zcI"/>
@@ -57,7 +45,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="390.5" y="146.5"/>
+            <point key="canvasLocation" x="352.5" y="121.5"/>
         </scene>
     </scenes>
 </document>

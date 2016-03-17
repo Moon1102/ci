@@ -35,6 +35,7 @@ class WriteViewController : UIViewController,UITableViewDataSource,UITableViewDe
             cellArr.append(cell)
         }
     }
+    //MARK:数据源方法
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return getString(dataModel.pingze).count
@@ -60,15 +61,18 @@ class WriteViewController : UIViewController,UITableViewDataSource,UITableViewDe
     {
         return 88
     }
+    //点击，显示
     @IBAction func clickTab(sender: UIButton)
     {
         toolView.hidden = false
     }
-    
+    //点击，隐藏
     @IBAction func clickCancel(sender: UIButton)
     {
          toolView.hidden = true
     }
+    
+    //保存按钮
     @IBAction func clickSave(sender: UIButton)
     {
         var temp = ""
@@ -83,20 +87,25 @@ class WriteViewController : UIViewController,UITableViewDataSource,UITableViewDe
         SQLiteDB.sharedInstance().execute("INSERT OR REPLACE INTO writing VALUES('\(dataModel.id)','\(temp)','\(dataModel.name)',\(NSDate().timeIntervalSince1970),NULL)")
         navigationController?.popToRootViewControllerAnimated(true)
     }
+    //改变背景
     @IBAction func clickBG(sender: UIButton)
     {
         
     }
     
+    //搜索韵脚按钮
     @IBAction func search(sender: UIButton)
     {
         let destiVC = UIStoryboard(name: "PingZeSearchViewController", bundle: nil).instantiateInitialViewController()! as! PingZeSearchViewControlller
         navigationController?.pushViewController(destiVC, animated: false)
     }
+    //介绍按钮
     @IBAction func intro(sender: UIButton)
     {
         navigationController?.pushViewController(IntroViewController(), animated: false)
     }
+    
+    //遍历字符串，做对应文字的映射
     func getString(str:String)->Array<NSMutableAttributedString>
     {
         var array:Array<NSMutableAttributedString>! = []

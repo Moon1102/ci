@@ -10,10 +10,10 @@ import UIKit
 
 class RandomViewController:UIViewController
 {
-    @IBOutlet weak var content: UITextView!
-    @IBOutlet weak var note: UITextView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var enter: UIButton!
+    @IBOutlet weak var content: UITextView!//内容View
+    @IBOutlet weak var note: UITextView!//注解View
+    @IBOutlet weak var nameLabel: UILabel!//词牌名Label
+    @IBOutlet weak var enter: UIButton!//进入按钮
     
     lazy var db = SQLiteDB.sharedInstance()
     
@@ -26,6 +26,7 @@ class RandomViewController:UIViewController
         initData()
     }
     
+    //初始化数据
     func initData()
     {
         let random = (arc4random() % 97) + 1
@@ -48,19 +49,20 @@ class RandomViewController:UIViewController
             enter.backgroundColor = UIColor(red: CGFloat(rgbData.first!["red"]! as! NSNumber)/255, green: CGFloat(rgbData.first!["green"]! as! NSNumber)/255, blue: CGFloat(rgbData.first!["blue"]! as! NSNumber)/255, alpha: 1)
         }
     }
+    //随机一首词
     @IBAction func clickRandom(sender: UIButton)
     {
         note.text = ""
         initData()
     }
-
+    //进入填词
     @IBAction func clickEnter(sender: AnyObject)
     {
         let destiVC = UIStoryboard(name: "WriteViewController", bundle: nil).instantiateInitialViewController()! as! WriteViewController
         destiVC.dataModel = model
         navigationController?.pushViewController(destiVC, animated: false)
     }
-
+    //分享
     @IBAction func clickShare(sender: AnyObject)
     {
         

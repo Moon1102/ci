@@ -10,7 +10,7 @@ import UIKit
 
 class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate,UISearchBarDelegate
 {
-    lazy var dic = ["a":"一麻","o":"二波","ie":"三皆","ai":"四开","ei":"五微","ao":"六豪","ou":"七尤","an":"八寒","en":"九文","ang":"十唐","eng":"十一庚"]
+    lazy var dic = ["a":"一麻","o":"二波","ie":"三皆","ai":"四开","ei":"五微","ao":"六豪","ou":"七尤","an":"八寒","en":"九文","ang":"十唐","eng":"十一庚"]//韵脚字典
     lazy var data = ""
     
     override func viewDidLoad()
@@ -19,6 +19,7 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
         
         tableView.registerNib(UINib(nibName: "DataCell", bundle: nil), forCellReuseIdentifier: "data")
     }
+    //MARK:数据源方法
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 1
@@ -31,6 +32,8 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 270
     }
+    
+    //搜索
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String)
     {
         guard pingzepanduan(searchText).1.first != nil else
@@ -44,6 +47,7 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
             tableView.reloadData()
         }
     }
+    //根据平仄判断，找到对应的韵脚
     func pingzepanduan(str:String)->(String,Array<Int>)
     {
         if let tempRes = tiquzhongwen(str)
@@ -154,6 +158,8 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
         }
         return ("",[])
     }
+    
+    //提取中文
     func tiquzhongwen(str:NSString)->String?
     {
         var tempArr:Array<String> = []
@@ -167,6 +173,8 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
         }
         return tempArr.first
     }
+    
+    //改变样式
     func searchDisplayControllerWillBeginSearch(controller: UISearchDisplayController) {
         searchDisplayController?.searchBar.showsCancelButton = true
         var cancelBtn:UIButton!

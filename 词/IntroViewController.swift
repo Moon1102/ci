@@ -10,6 +10,7 @@ import UIKit
 
 class IntroViewController: UIViewController
 {
+    //本地调用html
     override func viewDidLoad()
     {
         super.viewDidLoad()

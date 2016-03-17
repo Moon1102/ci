@@ -15,6 +15,7 @@ class WorksView: UIView
 
     var model:WritingModel!
     {
+        //模型赋值
         didSet
         {
             const.format.dateFormat = "yyyy-MM-dd HH:mm"
@@ -22,9 +23,14 @@ class WorksView: UIView
             contentLabel.text = model.ci_name + "\n" + model.text
         }
     }
+    
+    
+    //点击方法
     @IBAction func click(sender: UIButton)
     {
         let vc = getCurrentVC()
+        
+        //添加UIAlertController
         let alert = UIAlertController(title: "", message: "", preferredStyle:.ActionSheet)
         alert.addAction(UIAlertAction(title: "编辑", style: .Default, handler: { (UIAlertAction) -> Void in
             let destiVC = UIStoryboard(name: "WriteViewController", bundle: nil).instantiateInitialViewController()! as! WriteViewController
@@ -34,6 +40,8 @@ class WorksView: UIView
             
             vc.navigationController?.pushViewController(destiVC, animated: false)
         }))
+        
+        //UIAlertController的方法
         alert.addAction(UIAlertAction(title: "删除", style: .Destructive, handler: { (_) -> Void in
             
             let alert = UIAlertController(title: "确认删除？", message: "", preferredStyle:.Alert)
@@ -51,6 +59,9 @@ class WorksView: UIView
         }))
         vc.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    
+    //拿到当前页面的控制器
     func getCurrentVC()->UIViewController
     {
         for (var next = self.superview;next != nil; next = next?.superview)

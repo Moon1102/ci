@@ -19,6 +19,7 @@ class NameView: UIView
  
     var model:NameModel!
     {
+        //模型赋值
         didSet
         {
             EnNameLabel.text = model.enname
@@ -32,6 +33,7 @@ class NameView: UIView
         }
     }
     
+    //加载
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -44,7 +46,7 @@ class NameView: UIView
         addSubview(EnNameLabel)
     }
     
-    
+    //点击方法
     @IBAction func clickView(sender: UIButton)
     {
         let destiVC = UIStoryboard(name: "ListOneViewController", bundle: nil).instantiateInitialViewController()! as! ListOneViewController
@@ -52,6 +54,8 @@ class NameView: UIView
         (getCurrentVC() as! ListAllViewController).navigationController?.pushViewController(destiVC, animated: false)
         
     }
+    
+    //获取当前页面控制器
     func getCurrentVC()->UIViewController
     {
         for (var next = self.superview;next != nil; next = next?.superview)

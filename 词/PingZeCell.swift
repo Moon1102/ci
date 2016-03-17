@@ -15,6 +15,7 @@ class PingZeCell:UITableViewCell
     
     lazy var isPing = false
     
+    //改变TextField的时候改变文字颜色
     @IBAction func change(sender: UITextField)
     {
         let res = compare(change(),array2: pingzepanduan(input.text!))
@@ -23,14 +24,20 @@ class PingZeCell:UITableViewCell
    
         colorText(UIColor.redColor(),array: res)
     }
+    
+    //点TextField的时候要变黑(不强制覆盖可能会出现变红的问题)
     @IBAction func click(sender: UITextField)
     {
         if input.text! != "" { colorText(UIColor.blackColor(),array: [1]) }
     }
+    
+    //保存内容
     @IBAction func outputText(sender: UITextField)
     {
         (getCurrentVC() as! WriteViewController).dataArr[sender.tag] = sender.text
     }
+    
+    //拿到当前控制器
      func getCurrentVC()->UIViewController
     {
         for (var next = self.superview;next != nil; next = next?.superview)
@@ -43,6 +50,8 @@ class PingZeCell:UITableViewCell
         }
         return UIViewController()
     }
+    
+    //文字变色
     func colorText(color:UIColor,array:Array<Int>)
     {
         let tempAttributedString = NSMutableAttributedString(string:"\(input.text!)")
@@ -53,6 +62,8 @@ class PingZeCell:UITableViewCell
         }
         input.attributedText = tempAttributedString
     }
+    
+   //根据输入，判断平仄
     func pingzepanduan(str:String)->Array<Int>
     {
         let temp = NSMutableString(string:str) as CFMutableStringRef
@@ -76,6 +87,8 @@ class PingZeCell:UITableViewCell
         }
         return []
     }
+    
+    //替换韵脚
     func change()->Array<Int>
     {
         var res:Array<Int> = []
@@ -95,6 +108,8 @@ class PingZeCell:UITableViewCell
         }
         return res
     }
+    
+    //比较
     func compare(array1:Array<Int>,array2:Array<Int>)->Array<Int>
     {
         var res:Array<Int> = []

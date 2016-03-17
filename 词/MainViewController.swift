@@ -22,6 +22,7 @@ class MainVC:UIViewController
     {
         super.viewWillAppear(animated)
         
+        //查询数据库，获得数据
         let data = SQLiteDB.sharedInstance().query("SELECT * FROM writing")
         
         for sub in scroll.subviews
@@ -34,6 +35,7 @@ class MainVC:UIViewController
         
         scroll.contentSize = CGSizeMake(const.screenW * CGFloat(data.count + 1) - 50 , 0)
         
+        //有新数据就添加对应的View
         if tempCount < data.count
         {
                 workView = UINib(nibName: "WorksView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! WorksView
@@ -42,14 +44,20 @@ class MainVC:UIViewController
                 scroll.addSubview(workView)
         }
     }
-    override func viewDidDisappear(animated: Bool) {
+    //清掉tempCount
+    override func viewDidDisappear(animated: Bool)
+    {
         super.viewDidDisappear(animated)
         tempCount = 0
     }
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         setUp()
     }
+    
+    //初始化
     func setUp()
     {
         let data = SQLiteDB.sharedInstance().query("SELECT * FROM writing")
@@ -82,19 +90,23 @@ class MainVC:UIViewController
             return
         }
     }
+    //跳转显示所有词牌
     func listAll()
     {
         navigationController?.pushViewController(UIStoryboard(name: "ListAllViewController", bundle: nil).instantiateInitialViewController()!, animated: false)
         
     }
+    //跳转随机一首词
     func randomOne()
     {
        navigationController?.pushViewController(UIStoryboard(name: "RandomViewController", bundle: nil).instantiateInitialViewController()!, animated: false)
     }
+    //添加
     @IBAction func add(sender: UIButton)
     {
         
     }
+    //设置
     @IBAction func setting(sender: UIButton)
     {
         
