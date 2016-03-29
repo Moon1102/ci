@@ -58,7 +58,7 @@ class RandomViewController:UIViewController
     //进入填词
     @IBAction func clickEnter(sender: AnyObject)
     {
-        let destiVC = UIStoryboard(name: "WriteViewController", bundle: nil).instantiateInitialViewController()! as! WriteViewController
+        let destiVC = UIStoryboard(name: "WritingViewController", bundle: nil).instantiateInitialViewController()! as! WritingViewController
         destiVC.dataModel = model
         navigationController?.pushViewController(destiVC, animated: false)
     }

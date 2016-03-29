@@ -11,5 +11,6 @@ import UIKit
 enum const
 {
     static let screenW:CGFloat = UIScreen.mainScreen().bounds.width
+    static let screenH:CGFloat = UIScreen.mainScreen().bounds.height
     static let format = NSDateFormatter()
 }

@@ -9,12 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bcd;/SQLiteDB/SQLiteDB.swift"
-            timestampString = "478190418.543937"
+            filePath = "&#x8bcd;/WriteVC.swift"
+            timestampString = "480683139.47816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19">
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "WriteVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

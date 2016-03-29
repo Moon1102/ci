@@ -28,29 +28,23 @@ class PingZeCell:UITableViewCell
     //点TextField的时候要变黑(不强制覆盖可能会出现变红的问题)
     @IBAction func click(sender: UITextField)
     {
-        if input.text! != "" { colorText(UIColor.blackColor(),array: [1]) }
+        for i in 0..<input.attributedText!.length
+        {
+           let color = input.attributedText?.attribute(NSForegroundColorAttributeName, atIndex: i, effectiveRange: nil)
+            guard (color as! UIColor) != UIColor.redColor() else
+            {
+                colorText(UIColor.blackColor(),array: [1])
+                return
+            }
+        }
     }
     
     //保存内容
     @IBAction func outputText(sender: UITextField)
     {
-        (getCurrentVC() as! WriteViewController).dataArr[sender.tag] = sender.text
+        (getCurrentVC() as! WritingViewController).dataArr[sender.tag] = sender.text
     }
-    
-    //拿到当前控制器
-     func getCurrentVC()->UIViewController
-    {
-        for (var next = self.superview;next != nil; next = next?.superview)
-        {
-            let nextRes:UIResponder = (next?.nextResponder())!
-            if nextRes.isKindOfClass(UIViewController.classForCoder())
-            {
-                return nextRes as! UIViewController
-            }
-        }
-        return UIViewController()
-    }
-    
+
     //文字变色
     func colorText(color:UIColor,array:Array<Int>)
     {

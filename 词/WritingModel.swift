@@ -18,4 +18,6 @@ class WritingModel: NSObject
     var ci_name:String!
     /** 创建时间(戳) */
     var create_dt:AnyObject!
+    /** 图片id */
+    var image_id:AnyObject!
 }

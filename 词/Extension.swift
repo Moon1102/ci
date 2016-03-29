@@ -26,7 +26,7 @@ extension NSObject{
         //存放属性的个数
         var outCount:UInt32 = 0
         //获取所有的属性
-        let properties = class_copyPropertyList(self.classForCoder(), &outCount)
+        let properties = class_copyPropertyList(classForCoder(), &outCount)
         //遍历属性
         for var i = 0;i < Int(outCount);i++ {
             //获取第i个属性
@@ -39,5 +39,21 @@ extension NSObject{
             }
         }
         return model
+    }
+}
+//拿到当前页面的控制器
+extension UIView
+{
+    func getCurrentVC()->UIViewController
+    {
+        for (var next = superview;next != nil; next = next?.superview)
+        {
+            let nextRes:UIResponder = (next?.nextResponder())!
+            if nextRes.isKindOfClass(UIViewController.classForCoder())
+            {
+                return nextRes as! UIViewController
+            }
+        }
+        return UIViewController()
     }
 }

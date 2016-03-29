@@ -54,20 +54,5 @@ class NameView: UIView
         (getCurrentVC() as! ListAllViewController).navigationController?.pushViewController(destiVC, animated: false)
         
     }
-    
-    //获取当前页面控制器
-    func getCurrentVC()->UIViewController
-    {
-        for (var next = self.superview;next != nil; next = next?.superview)
-        {
-            let nextRes:UIResponder = (next?.nextResponder())!
-            if nextRes.isKindOfClass(UIViewController.classForCoder())
-            {
-                return nextRes as! UIViewController
-            }
-        }
-        return UIViewController()
-    }
-    
 }
 

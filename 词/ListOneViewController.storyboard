@@ -66,7 +66,7 @@
                                     <action selector="clickEnter:" destination="onv-Wo-gry" eventType="touchUpInside" id="ujT-PJ-xCu"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UBF-67-Elh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UBF-67-Elh">
                                 <rect key="frame" x="40" y="290" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -23,12 +23,13 @@ class MainVC:UIViewController
         super.viewWillAppear(animated)
         
         //查询数据库，获得数据
-        let data = SQLiteDB.sharedInstance().query("SELECT * FROM writing")
+        let data = SQLiteDB.sharedInstance().query("SELECT * FROM write")
         
         for sub in scroll.subviews
         {
             if sub.isKindOfClass(WorksView.classForCoder())
             {
+                (sub as! WorksView).model = WritingModel.objectWithKeyValues(data[tempCount]) as! WritingModel
                 tempCount++
             }
         }
@@ -60,7 +61,7 @@ class MainVC:UIViewController
     //初始化
     func setUp()
     {
-        let data = SQLiteDB.sharedInstance().query("SELECT * FROM writing")
+        let data = SQLiteDB.sharedInstance().query("SELECT * FROM write")
         scroll.center = view.center
         scroll.contentSize = CGSizeMake(const.screenW * CGFloat(data.count + 1) - 50 , 0)
         scroll.showsHorizontalScrollIndicator = false

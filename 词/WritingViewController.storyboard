@@ -10,10 +10,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Write View Controller-->
+        <!--Writing View Controller-->
         <scene sceneID="POQ-nn-2dH">
             <objects>
-                <viewController id="gPD-LW-GYb" customClass="WriteViewController" customModule="词" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gPD-LW-GYb" customClass="WritingViewController" customModule="词" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U87-G1-RKL"/>
                         <viewControllerLayoutGuide type="bottom" id="GdJ-VQ-bxS"/>
@@ -73,53 +73,6 @@
                                     <outlet property="delegate" destination="gPD-LW-GYb" id="8mY-9g-lck"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-eJ-327" userLabel="Tabbar">
-                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiE-bG-zTF">
-                                        <rect key="frame" x="165" y="10" width="46" height="38"/>
-                                        <animations/>
-                                        <state key="normal" image="layout_bg_paper"/>
-                                        <connections>
-                                            <action selector="clickBG:" destination="gPD-LW-GYb" eventType="touchUpInside" id="8kD-A6-RdQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PI-3h-2WH">
-                                        <rect key="frame" x="313" y="10" width="46" height="38"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="Var-Xt-6BM"/>
-                                        </constraints>
-                                        <state key="normal" image="done"/>
-                                        <connections>
-                                            <action selector="clickSave:" destination="gPD-LW-GYb" eventType="touchUpInside" id="GIS-ee-5fO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzs-6T-OW7">
-                                        <rect key="frame" x="15" y="10" width="46" height="38"/>
-                                        <animations/>
-                                        <state key="normal" image="cancel"/>
-                                        <connections>
-                                            <action selector="clickCancel:" destination="gPD-LW-GYb" eventType="touchUpInside" id="3Oe-VW-TPH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Yzs-6T-OW7" firstAttribute="leading" secondItem="Qeq-eJ-327" secondAttribute="leading" constant="15" id="1Kq-Cm-JeV"/>
-                                    <constraint firstItem="oiE-bG-zTF" firstAttribute="centerY" secondItem="0PI-3h-2WH" secondAttribute="centerY" id="EcL-xV-ZYD"/>
-                                    <constraint firstItem="Yzs-6T-OW7" firstAttribute="width" secondItem="oiE-bG-zTF" secondAttribute="width" id="FAl-Yp-rVf"/>
-                                    <constraint firstItem="Yzs-6T-OW7" firstAttribute="centerY" secondItem="Qeq-eJ-327" secondAttribute="centerY" id="Svf-OV-Yf0"/>
-                                    <constraint firstItem="Yzs-6T-OW7" firstAttribute="height" secondItem="oiE-bG-zTF" secondAttribute="height" id="U3C-QD-11h"/>
-                                    <constraint firstItem="0PI-3h-2WH" firstAttribute="top" secondItem="Yzs-6T-OW7" secondAttribute="top" id="Umd-aP-NYR"/>
-                                    <constraint firstItem="oiE-bG-zTF" firstAttribute="height" secondItem="0PI-3h-2WH" secondAttribute="height" id="axF-lk-Asz"/>
-                                    <constraint firstItem="oiE-bG-zTF" firstAttribute="width" secondItem="0PI-3h-2WH" secondAttribute="width" id="doo-qr-Kiy"/>
-                                    <constraint firstAttribute="trailing" secondItem="0PI-3h-2WH" secondAttribute="trailing" constant="16" id="kbf-xK-QWM"/>
-                                    <constraint firstAttribute="height" constant="57" id="l8F-Ox-8ho"/>
-                                    <constraint firstItem="oiE-bG-zTF" firstAttribute="centerX" secondItem="Qeq-eJ-327" secondAttribute="centerX" id="lkL-Ry-QAj"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,20 +85,18 @@
                             <constraint firstItem="Oe8-vK-DXt" firstAttribute="width" secondItem="6k9-c8-xy1" secondAttribute="width" id="HBn-n8-se4"/>
                             <constraint firstItem="6k9-c8-xy1" firstAttribute="height" secondItem="cvh-Uc-Pbu" secondAttribute="height" id="JHl-Mp-tEo"/>
                             <constraint firstItem="6k9-c8-xy1" firstAttribute="width" secondItem="cvh-Uc-Pbu" secondAttribute="width" id="M0X-rV-rF1"/>
-                            <constraint firstItem="Qeq-eJ-327" firstAttribute="top" secondItem="ACR-1R-9x9" secondAttribute="bottom" constant="13" id="NCV-w1-OVf"/>
                             <constraint firstItem="ACR-1R-9x9" firstAttribute="leading" secondItem="jQe-4a-Urf" secondAttribute="leading" constant="20" id="R2K-vA-aT0"/>
-                            <constraint firstItem="Qeq-eJ-327" firstAttribute="leading" secondItem="jQe-4a-Urf" secondAttribute="leading" id="SBO-uR-d30"/>
                             <constraint firstItem="cvh-Uc-Pbu" firstAttribute="leading" secondItem="jQe-4a-Urf" secondAttribute="leading" constant="20" id="X0p-Hv-fFS"/>
                             <constraint firstAttribute="trailing" secondItem="ACR-1R-9x9" secondAttribute="trailing" constant="20" id="Zn4-1J-7db"/>
                             <constraint firstItem="Oe8-vK-DXt" firstAttribute="centerY" secondItem="6k9-c8-xy1" secondAttribute="centerY" id="fi9-cb-SUh"/>
                             <constraint firstItem="cvh-Uc-Pbu" firstAttribute="top" secondItem="U87-G1-RKL" secondAttribute="bottom" constant="20" id="iAH-JR-TJy"/>
                             <constraint firstItem="aSr-20-2Ou" firstAttribute="leading" secondItem="jQe-4a-Urf" secondAttribute="leading" id="jTd-Wz-q9c"/>
+                            <constraint firstItem="GdJ-VQ-bxS" firstAttribute="top" secondItem="ACR-1R-9x9" secondAttribute="bottom" constant="70" id="oWz-Ug-1LL"/>
                             <constraint firstItem="6k9-c8-xy1" firstAttribute="centerY" secondItem="cvh-Uc-Pbu" secondAttribute="centerY" id="pWB-Gw-2RV"/>
                             <constraint firstAttribute="trailing" secondItem="aSr-20-2Ou" secondAttribute="trailing" id="qdm-IT-jps"/>
-                            <constraint firstAttribute="trailing" secondItem="Qeq-eJ-327" secondAttribute="trailing" id="sWY-Nd-C4j"/>
                             <constraint firstAttribute="trailing" secondItem="Oe8-vK-DXt" secondAttribute="trailing" constant="20" id="tzq-Qe-mDC"/>
                             <constraint firstItem="ACR-1R-9x9" firstAttribute="top" secondItem="cvh-Uc-Pbu" secondAttribute="bottom" constant="32" id="vfv-zY-jy2"/>
-                            <constraint firstItem="GdJ-VQ-bxS" firstAttribute="top" secondItem="Qeq-eJ-327" secondAttribute="bottom" id="wKO-Zg-uJb"/>
+                            <constraint firstItem="ACR-1R-9x9" firstAttribute="top" secondItem="cvh-Uc-Pbu" secondAttribute="bottom" constant="32" id="w1T-Na-BqQ"/>
                             <constraint firstItem="dfq-P3-7Wx" firstAttribute="centerY" secondItem="cvh-Uc-Pbu" secondAttribute="centerY" id="xYm-Ur-1G6"/>
                         </constraints>
                     </view>
@@ -155,7 +106,6 @@
                         <outlet property="tableV" destination="ACR-1R-9x9" id="nf0-1Y-DRB"/>
                         <outlet property="titleLabel" destination="dfq-P3-7Wx" id="K73-jT-v2B"/>
                         <outlet property="toolBtn" destination="cvh-Uc-Pbu" id="DL9-We-0eZ"/>
-                        <outlet property="toolView" destination="Qeq-eJ-327" id="WbT-JD-hUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjk-l5-xQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,11 +115,8 @@
     </scenes>
     <resources>
         <image name="001" width="320" height="568"/>
-        <image name="cancel" width="16" height="15"/>
         <image name="dict" width="22" height="22"/>
-        <image name="done" width="22" height="22"/>
         <image name="info" width="22" height="22"/>
         <image name="keyboard" width="22" height="21"/>
-        <image name="layout_bg_paper" width="33" height="38"/>
     </resources>
 </document>
