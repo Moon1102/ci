@@ -69,9 +69,7 @@ class WorksView: UIView
             alert.addAction(UIAlertAction(title: "确定", style: .Destructive, handler: { (_) -> Void in
                 SQLiteDB.sharedInstance().query("DELETE FROM write WHERE  id = \(self.model.id) ")
                 self.removeFromSuperview()
-                let data = SQLiteDB.sharedInstance().query("SELECT * FROM write")
-                (vc as! MainVC).scroll.contentOffset = CGPointMake(0, 0)
-                (vc as! MainVC).scroll.contentSize = CGSizeMake(const.screenW * CGFloat(data.count + 1) - 50 , 0)
+                vc.viewWillAppear(false)
             }))
             vc.presentViewController(alert, animated: true, completion: nil)
         }))

@@ -12,7 +12,7 @@ extension NameModel
 {
     func getColor(db:SQLiteDB)->UIColor
     {
-        if 0 == parent_id as! NSObject
+        guard 0 != parent_id as! NSObject else
         {
             let rgbData = db.query("SELECT * FROM color WHERE id = \(color_id) ")
             return  UIColor(red: CGFloat(rgbData.first!["red"]! as! NSNumber)/255, green: CGFloat(rgbData.first!["green"]! as! NSNumber)/255, blue: CGFloat(rgbData.first!["blue"]! as! NSNumber)/255, alpha: 1)

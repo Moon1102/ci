@@ -9,11 +9,12 @@
         <scene sceneID="yXB-ZX-ck4">
             <objects>
                 <tableViewController id="qRK-VO-ZVd" customClass="PingZeSearchViewControlller" customModule="词" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFP-j1-ajL">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFP-j1-ajL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="在中华新韵中搜索" id="osu-Ec-b62">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -30,20 +31,8 @@
                     </tableView>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="oFy-tr-sg8" id="pFJ-4G-hHQ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfR-tQ-D2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="oFy-tr-sg8">
-                    <connections>
-                        <outlet property="delegate" destination="qRK-VO-ZVd" id="Dwt-tW-xoK"/>
-                        <outlet property="searchBar" destination="osu-Ec-b62" id="RCR-y8-Xp3"/>
-                        <outlet property="searchContentsController" destination="qRK-VO-ZVd" id="qQ8-66-af1"/>
-                        <outlet property="searchResultsDataSource" destination="qRK-VO-ZVd" id="LK5-t4-YhS"/>
-                        <outlet property="searchResultsDelegate" destination="qRK-VO-ZVd" id="nZZ-ka-squ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="352.5" y="121.5"/>
         </scene>

@@ -11,10 +11,6 @@ import UIKit
 class ToolView: UIView
 {
     @IBOutlet weak var changeBtn: UIButton!
-//    
-//    lazy var dataArr = Dictionary<Int, String>()
-//    
-//    var dataModel:NameModel!
     
     var vc:UIViewController!
     
@@ -63,6 +59,7 @@ class ToolView: UIView
         {
             let controller = vc as! WritingViewController
             let temp = ContentText(controller.dataArr)
+    
             SQLiteDB.sharedInstance().execute("INSERT OR REPLACE INTO write VALUES('\(controller.dataModel.id)','\(temp)','\(controller.dataModel.name)','\(NSDate().timeIntervalSince1970)',NULL)")
               vc.navigationController?.popToRootViewControllerAnimated(true)
         }
@@ -70,10 +67,10 @@ class ToolView: UIView
         {
             let controller = vc as! ChooseBgViewController
             let temp = controller.contentLabel.text?.subStringFrom((controller.contentLabel.text?.positionOf("\n"))! + 1)
-           
-            SQLiteDB.sharedInstance().execute("INSERT OR REPLACE INTO write VALUES('\(controller.model.id)','\(temp)','\(controller.model.name)','\(NSDate().timeIntervalSince1970)','\(controller.imageName    )')")
-            vc.dismissViewControllerAnimated(false, completion: { [weak self]() -> Void in
-                self!.getCurrentVC().navigationController?.popToRootViewControllerAnimated(true)
+
+            SQLiteDB.sharedInstance().execute("INSERT OR REPLACE INTO write VALUES('\(controller.model.id)','\(temp!)','\(controller.model.name)','\(NSDate().timeIntervalSince1970)','\(controller.imageName    )')")
+            vc.dismissViewControllerAnimated(false, completion: {() -> Void in
+            (UIApplication.sharedApplication().keyWindow?.rootViewController as! NavgationController).popToRootViewControllerAnimated(false)
             })
         }
     }

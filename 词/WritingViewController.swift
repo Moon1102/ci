@@ -71,8 +71,6 @@ class WritingViewController : WriteViewController,UITableViewDataSource,UITableV
     @IBAction func clickTab(sender: UIButton)
     {
         toolView.hidden = false
-//        toolView.dataModel = dataModel
-//        toolView.dataArr = dataArr
     }
     //搜索韵脚按钮
     @IBAction func search(sender: UIButton)

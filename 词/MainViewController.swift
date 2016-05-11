@@ -22,6 +22,8 @@ class MainVC:UIViewController
     {
         super.viewWillAppear(animated)
         
+        tempCount = 0
+
         //查询数据库，获得数据
         let data = SQLiteDB.sharedInstance().query("SELECT * FROM write")
         
@@ -30,6 +32,7 @@ class MainVC:UIViewController
             if sub.isKindOfClass(WorksView.classForCoder())
             {
                 (sub as! WorksView).model = WritingModel.objectWithKeyValues(data[tempCount]) as! WritingModel
+                sub.frame = CGRectMake(30 + (const.screenW) * CGFloat(tempCount+1),30,const.screenW - 100,const.screenW - 100)
                 tempCount++
             }
         }
@@ -39,17 +42,11 @@ class MainVC:UIViewController
         //有新数据就添加对应的View
         if tempCount < data.count
         {
-                workView = UINib(nibName: "WorksView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! WorksView
-                workView.model = WritingModel.objectWithKeyValues(data[data.count - 1]) as! WritingModel
-                workView.frame = CGRectMake(30 + (const.screenW) * CGFloat(data.count),30,const.screenW - 100,const.screenW - 100)
-                scroll.addSubview(workView)
+            workView = UINib(nibName: "WorksView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! WorksView
+            workView.model = WritingModel.objectWithKeyValues(data[data.count - 1]) as! WritingModel
+            workView.frame = CGRectMake(30 + (const.screenW) * CGFloat(data.count),30,const.screenW - 100,const.screenW - 100)
+            scroll.addSubview(workView)
         }
-    }
-    //清掉tempCount
-    override func viewDidDisappear(animated: Bool)
-    {
-        super.viewDidDisappear(animated)
-        tempCount = 0
     }
     
     override func viewDidLoad()
@@ -57,7 +54,7 @@ class MainVC:UIViewController
         super.viewDidLoad()
         setUp()
     }
-    
+
     //初始化
     func setUp()
     {
@@ -100,7 +97,7 @@ class MainVC:UIViewController
     //跳转随机一首词
     func randomOne()
     {
-       navigationController?.pushViewController(UIStoryboard(name: "RandomViewController", bundle: nil).instantiateInitialViewController()!, animated: false)
+        navigationController?.pushViewController(UIStoryboard(name: "RandomViewController", bundle: nil).instantiateInitialViewController()!, animated: false)
     }
     //添加
     @IBAction func add(sender: UIButton)
@@ -112,5 +109,6 @@ class MainVC:UIViewController
     {
         
     }
+
 }
 

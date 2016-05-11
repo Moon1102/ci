@@ -12,18 +12,18 @@ class ListAllViewController:UIViewController
 {
     @IBOutlet weak var segment: UISegmentedControl!
     
-    lazy var scroll = UIScrollView(frame: CGRectMake(0,0,const.screenW,const.screenW - 40))
-    lazy var scrollV = UIScrollView(frame: CGRectMake(0,0,const.screenW,const.screenW - 40))
-    
-    lazy var nameArray:Array<NameView> = []
+    lazy var scroll = UIScrollView()
+    lazy var scrollV = UIScrollView()
+
+    lazy var modelArray = NSMutableArray()
     lazy var db = SQLiteDB.sharedInstance()
     
     var nameView:NameView!
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         initData()
     }
     
@@ -31,20 +31,40 @@ class ListAllViewController:UIViewController
     func initData()
     {
         let data = db.query("SELECT * FROM cipai")
-
-        for model in data
+        
+        scroll = creatScrollView(data.count)
+        scrollV = creatScrollView(data.count)
+        
+        for index in 0..<data.count
         {
             nameView = UINib(nibName: "NameView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! NameView
-            nameView.frame = CGRectMake(0 + (model["id"] as! CGFloat - 1) * 90, scroll.frame.size.height / 2 - 65, 80, 170)
-            nameView.model = NameModel.objectWithKeyValues(model) as! NameModel
-            nameArray.append(nameView)
+            nameView.frame = CGRectMake(CGFloat(index) * 90, scroll.frame.size.height / 2 - 65, 80, 170)
+            nameView.model = NameModel.objectWithKeyValues(data[index]) as! NameModel
+            modelArray.addObject(nameView.model)
             scroll.addSubview(nameView)
         }
+
+        modelArray.sortUsingDescriptors([NSSortDescriptor(key: "wordcount", ascending: true)])
+
+        for index in 0..<modelArray.count
+        {
+            nameView = UINib(nibName: "NameView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! NameView
+            nameView.frame = CGRectMake(CGFloat(index) * 90, scroll.frame.size.height / 2 - 65, 80, 170)
+            nameView.model = modelArray[index] as! NameModel
+            scrollV.addSubview(nameView)
+        }
         
-        scroll.center = view.center
-        scroll.showsHorizontalScrollIndicator = false
-        scroll.contentSize = CGSizeMake(CGFloat(data.count) * 90, 0)
         view.addSubview(scroll)
+    }
+    
+    func creatScrollView(count:Int) -> UIScrollView
+    {
+        let scrollView = UIScrollView(frame: CGRectMake(0,0,const.screenW,const.screenW - 40))
+        scrollView.center = view.center
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.contentSize = CGSizeMake(CGFloat(count) * 90, 0)
+        
+        return scrollView
     }
     
     //切换排列方式
@@ -62,24 +82,6 @@ class ListAllViewController:UIViewController
         
         scroll.removeFromSuperview()
         
-        if scrollV.subviews.count == 0
-        {
-            let sorted = nameArray.sort({ ($0.model.wordcount as! Int ) < ($1.model.wordcount as! Int)})
-            var i:CGFloat = 0
-            
-            for v in sorted
-            {
-                nameView = UINib(nibName: "NameView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! NameView
-                nameView.frame = CGRectMake(0 + i * 90, scroll.frame.size.height / 2 - 65, 80, 170)
-                nameView.model = v.model
-                scrollV.addSubview(nameView)
-                i++
-            }
-            scrollV.center = view.center
-            scrollV.showsHorizontalScrollIndicator = false
-            scrollV.contentSize = CGSizeMake(CGFloat(sorted.count) * 90, 0)
-        }
-
         view.addSubview(scrollV)
             
         default:break

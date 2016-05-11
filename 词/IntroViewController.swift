@@ -20,6 +20,5 @@ class IntroViewController: UIViewController
         let str = try! NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
         web.loadHTMLString(str as String, baseURL: NSURL(string: path))
         view.addSubview(web)
-        
     }
 }

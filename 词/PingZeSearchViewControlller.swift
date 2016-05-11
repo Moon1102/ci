@@ -16,7 +16,7 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+    
         tableView.registerNib(UINib(nibName: "DataCell", bundle: nil), forCellReuseIdentifier: "data")
     }
     //MARK:数据源方法
@@ -174,19 +174,19 @@ class PingZeSearchViewControlller: UITableViewController,UISearchDisplayDelegate
         return tempArr.first
     }
     
-    //改变样式
-    func searchDisplayControllerWillBeginSearch(controller: UISearchDisplayController) {
-        searchDisplayController?.searchBar.showsCancelButton = true
-        var cancelBtn:UIButton!
-        for sub in (searchDisplayController?.searchBar.subviews.first?.subviews)!
-        {
-            if sub.isKindOfClass(NSClassFromString("UINavigationButton")!){
-                cancelBtn = sub as! UIButton
-            }
-        }
-        if (cancelBtn != nil)
-        {
-            cancelBtn.setTitle("取消", forState: .Normal)
-        }
-    }
+//    //改变样式
+//    func searchDisplayControllerWillBeginSearch(controller: UISearchDisplayController) {
+//        searchDisplayController?.searchBar.showsCancelButton = true
+//        var cancelBtn:UIButton!
+//        for sub in (searchDisplayController?.searchBar.subviews.first?.subviews)!
+//        {
+//            if sub.isKindOfClass(NSClassFromString("UINavigationButton")!){
+//                cancelBtn = sub as! UIButton
+//            }
+//        }
+//        if (cancelBtn != nil)
+//        {
+//            cancelBtn.setTitle("取消", forState: .Normal)
+//        }
+//    }
 }
